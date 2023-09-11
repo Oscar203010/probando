@@ -1,0 +1,459 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  float: left;
+}
+
+.logo h1 {
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin-left: 20px;
+  transition: transform 0.3s;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  transform: scale(1.2);
+  /* color: #3cbd3c; */
+  background-color: #4df85b; /* Cambia el color de fondo al pasar el cursor según tu preferencia */
+  color: #fff; /* Cambia el color del texto al pasar el cursor según tu preferencia */
+  padding: 5px; /* Espaciado dentro del recuadro */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: transform 0.3s; /* Agrega una transición suave al efecto */
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding:5px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    margin-right: 20px;
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #444;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    z-index: 1;
+  }
+
+  .menu.active li {
+    margin-left: 0;
+    margin-bottom: 10px;
+    transform: scale(1); /* Reset the transform effect */
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para el formulario de contacto */
+#contactos {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el formulario en dispositivos pequeños */
+@media (max-width: 768px) {
+  #contactos {
+    width: 70%;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+}
+
+/*====================================================================================*/
+
+/*====================================================================================*/
+
+/* Estilos para los iconos de redes sociales en el footer */
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 768px) {
+  .social-icons {
+    flex-direction: row; /* Cambia la dirección de los botones a fila para dispositivos pequeños */
+    justify-content: center; /* Centra horizontalmente los botones en dispositivos pequeños */
+  }
+
+  .social-icons a {
+    width: 35px; /* Reduce el tamaño de los botones en dispositivos pequeños */
+    height: 35px;
+    margin: 3px; /* Reduce el margen entre los botones en dispositivos pequeños */
+  }
+}
+
+/* Estilos para el spinner */
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0; /* Inicialmente, el spinner está oculto */
+  pointer-events: none; /* Evita que se puedan hacer clics en elementos debajo del spinner */
+}
+
+.spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform-style: preserve-3d;
+  animation: spin 2s linear infinite;
+}
+
+.loading-message {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  color: #fff;
+  font-size: 14px;
+}
+
+.cube {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.cube .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #3498db;
+}
+
+.cube .front {
+  transform: translateZ(40px);
+}
+
+.cube .back {
+  transform: rotateY(180deg) translateZ(40px);
+}
+
+.cube .top {
+  transform: rotateX(90deg) translateZ(40px);
+}
+
+.cube .bottom {
+  transform: rotateX(-90deg) translateZ(40px);
+}
+
+.cube .left {
+  transform: rotateY(-90deg) translateZ(40px);
+}
+
+.cube .right {
+  transform: rotateY(90deg) translateZ(40px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 768px) {
+  /* Agrega aquí los estilos para dispositivos pequeños si es necesario */
+}
+
+ /* Estilos para el contenedor del mapa */
+ #map {
+  width: 80%;
+  height: 400px; /* Altura inicial del mapa */
+  margin: 0 auto; /* Centra el mapa horizontalmente */
+  margin-bottom: 20px; /* Espaciado inferior */
+  border: 2px solid #ccc; /* Agregar un borde alrededor del mapa */
+  border-radius: 10px; /* Añadir bordes redondeados al contenedor del mapa */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Agregar una sombra alrededor del mapa */
+}
+
+/* Media queries para ajustar el tamaño del mapa en diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  /* Para pantallas más pequeñas, ajusta la altura del mapa */
+  #map {
+    height: 300px; /* Altura reducida para pantallas más pequeñas */
+  }
+}
+
+/* Estilos para el card de docentes */
+/* Estilos generales */
+#docentes {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f2f2f2;
+}
+
+.docente-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px; /* Espaciado entre los cards */
+  max-width: 1200px; /* Ancho máximo de la sección */
+  margin: 0 auto; /* Centrar la sección en la página */
+  justify-content: center; /* Centrar horizontalmente los cards */
+}
+
+.docente-card {
+  background-color: rgb(245, 233, 180);
+  padding: 15px; /* Reducción del padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.docente-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(50%);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+.docente-card:hover::before {
+  transform: translateY(0);
+}
+
+.docente-card img {
+  width: 80px; /* Reducción del tamaño de la imagen */
+  height: 80px; /* Reducción del tamaño de la imagen */
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: block;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.docente-card h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 100;
+  color: #333;
+}
+
+.docente-card p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.docente-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación en el eje Y */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries para ajustar los cards en diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  .docente-card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    gap: 20px; /* Espaciado entre los cards */
+    margin: 0 10px; /* Margen izquierdo y derecho de 10px */
+  }
+
+  .docente-card {
+    padding: 20px; /* Restauración del padding original */
+  }
+}
+
+/* Chatbot Icon */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.chat-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.chat-icon:hover img {
+  transform: scale(1.1);
+}
+
+/* Chatbot Container */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+#user-input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+#send-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}

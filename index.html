@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carmelo Felix Medrano 10125 - Jayanca</title>
+    <link rel="stylesheet" href="Assets/Css/styles.css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?API_KEY=AIzaSyDOwViEs4ESnng9X7V0So3zQ47aRuME01g&callback=initMap"
+      async
+      defer
+    ></script>
+    <!-- https://maps.googleapis.com/maps/api/js?key=AIzaSyDOwViEs4ESnng9X7V0So3zQ47aRuME01g&callback=initMap -->
+
+    <!-- api de google maps -->
+  </head>
+
+  <body>
+    <!-- Spinner -->
+    <!-- <div class="spinner-container" id="spinnerContainer">
+      <div class="spinner">
+        <div class="loading-message">Cargando ...!</div>
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+          <div class="face left"></div>
+          <div class="face right"></div>
+        </div>
+      </div>
+    </div> -->
+
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>Carmelo Felix Medrano 10125 - Jayanca</h1>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <ul class="menu" id="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#acerca">Acerca de</a></li>
+          <li><a href="#docentes">Docentes</a></li>
+          <li><a href="#contactos">Contactanos</a></li>
+          <li><a href="#ubicacion">Ubicacion</a></li>
+          <li><a href="#aula">Aula</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contenido principal del sitio web -->
+    <!-- Card de docentes -->
+    <section id="docentes">
+      <h3>Docentes</h3>
+      <hr />
+      <div class="docente-card-container">
+        <!-- Docente 1 -->
+        <div class="docente-card">
+          <img src="Assets/Images/" alt="Docente 1" />
+          <h4><b>Tito Gonzales Garcia</b></h4>
+          <p>Especialidad: Educacion Fisica</p>
+          <p>Email: magico8010@gmail.com</p>
+        </div>
+
+        <!-- Docente 2 -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 2" />
+          <h4>Nombre del Docente 2</h4>
+          <p>Especialidad: Especialidad del Docente 2</p>
+          <p>Email: email2@example.com</p>
+        </div>
+
+        <!-- Docente 3 -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 3" />
+          <h4>Nombre del Docente 3</h4>
+          <p>Especialidad: Especialidad del Docente 3</p>
+          <p>Email: email3@example.com</p>
+        </div>
+
+        <!-- Docente 4 -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 4" />
+          <h4>Nombre del Docente 4</h4>
+          <p>Especialidad: Especialidad del Docente 4</p>
+          <p>Email: email4@example.com</p>
+        </div>
+
+        <!-- Docente 5  -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 5" />
+          <h4>Nombre del Docente 5</h4>
+          <p>Especialidad: Especialidad del Docente 4</p>
+          <p>Email: email4@example.com</p>
+        </div>
+
+        <!-- Docente 6  -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 6" />
+          <h4>Nombre del Docente 6</h4>
+          <p>Especialidad: Especialidad del Docente 4</p>
+          <p>Email: email4@example.com</p>
+        </div>
+
+        <!-- Docente 7  -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 7" />
+          <h4>Nombre del Docente 6</h4>
+          <p>Especialidad: Especialidad del Docente 4</p>
+          <p>Email: email4@example.com</p>
+        </div>
+
+        <!-- Docente 8  -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 8" />
+          <h4>Nombre del Docente 6</h4>
+          <p>Especialidad: Especialidad del Docente 4</p>
+          <p>Email: email4@example.com</p>
+        </div>
+
+        <!-- Docente 9  -->
+        <div class="docente-card">
+          <img src="Assets/Images/1profe.jpg" alt="Docente 9" />
+          <h4>Nombre del Docente 6</h4>
+          <p>Especialidad: Especialidad del Docente 4</p>
+          <p>Email: email4@example.com</p>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <main>
+      <section id="contactos">
+        <h3>Formulario Contactanos</h3>
+        <hr />
+        <form action="enviar_correo.php" method="post" autocomplete="off">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <input type="submit" value="Enviar" />
+        </form>
+      </section>
+      
+      <!-- Mapa de ubicación -->
+      <section id="ubicacion">
+        <h3>Ubicación</h3>
+        <hr />
+        <!-- <p>Calle Miguel Grau 416 - Jayanca - Lambayeque.</p> -->
+        <div id="map"></div>
+      </section>
+    </main>
+
+    <!-- Chatbot Icon -->
+    <div class="chat-icon" id="chat-icon">
+      <img src="Assets/Images/chatbot.png" alt="Chat Icon" />
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chat-container" id="chat-container">
+      <div class="chat-header">
+        <h3>Chatbot</h3>
+        <button id="close-chat">&times;</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <!-- Aquí se mostrarán los mensajes del chat -->
+      </div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Escribe un mensaje..."
+        />
+        <button id="send-button">Enviar</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com/carmelofelix.medrano.7"
+          target="_blank"
+        >
+          <img src="Assets/Images/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com/tu-usuario" target="_blank">
+          <img src="Assets/Images/twitter.png" alt="Twitter" />
+        </a>
+        <a href="https://www.instagram.com/tu-usuario" target="_blank">
+          <img src="Assets/Images/instagram.png" alt="Instagram" />
+        </a>
+      </div>
+      <p>
+        Institución Educativa Carmelo Felix Medrano 10125 - Jayanca &copy; 2023.
+        Todos los derechos reservados.
+      </p>
+      <!-- Iconos de redes sociales -->
+    </footer>
+
+    <script src="Assets/Js/scripts.js"></script>
+    <!-- <script>
+      // Mostrar el spinner al cargar la página
+      window.addEventListener("load", () => {
+        const spinnerContainer = document.getElementById("spinnerContainer");
+        const bodyElement = document.body;
+
+        spinnerContainer.style.opacity = "2"; // Muestra el spinner ajustando la opacidad
+        bodyElement.classList.add("hidden"); // Agrega la clase para ocultar el contenido de la página
+
+        setTimeout(() => {
+          spinnerContainer.style.display = "none"; // Oculta completamente el spinner después de la transición
+          bodyElement.classList.remove("hidden"); // Remueve la clase para mostrar el contenido de la página
+        }, 3000); // Oculta el spinner después de 3 segundos
+      });
+    </script> -->
+
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOwViEs4ESnng9X7V0So3zQ47aRuME01g&callback=initMap"async
+      defer></script> -->
+  </body>
+</html>
